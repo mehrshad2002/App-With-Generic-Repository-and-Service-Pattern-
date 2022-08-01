@@ -175,8 +175,8 @@ namespace Repositories
 
         internal static string ReadByID(int id)
         {
-            //T obj = default(T);
-            var obj = Activator.CreateInstance<T>();
+            T obj = default(T);
+            obj = Activator.CreateInstance<T>();
             Type type = obj.GetType();
             string TableName = type.Name;
             string query = $"select * from {TableName} where ID = {id}";
